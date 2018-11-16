@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
     socket.username = "Anonymous"
 
     //listen on change_username
-    socket.on('chang_username', (data) => {
+    socket.on('change_username', (data) => {
         socket.username = data.username
     })
 
