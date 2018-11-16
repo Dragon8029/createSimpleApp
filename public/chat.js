@@ -25,4 +25,12 @@ $(function(){
         console.log(username.val())
         socket.emit('change_username', {username : username.val()})
     })
+    //Emit typing
+    message.bind("keypress", () => {
+        socket.emit('typing')
+    })
+    //Listen on typing
+    socket.on('typing', (data) => {
+        feedback.html("<p><i>" + data.username + " is typing a message..." + "</i></p>")
+    })
 });
